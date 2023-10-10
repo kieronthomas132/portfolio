@@ -1,6 +1,6 @@
 import image from "../../assets/image.svg";
 import { Button } from "@nextui-org/react";
-import Resume from "../../assets/resume/Kieron_Thomas_Resume.pdf";
+import Resume from '../../assets/resume/Kieron-Thomas-Resume.pdf'
 const Header = () => {
   return (
     <div className="text-white  md:h-[700px] h-[500px] z-10 relative font-inter md:pt-[150px] p-3">
