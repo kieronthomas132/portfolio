@@ -1,6 +1,6 @@
 import image from "../../assets/image.svg";
 import { Button } from "@nextui-org/react";
-import Resume from '../../assets/resume/Kieron-Thomas-Resume.pdf'
+import Resume from '../../assets/Kieron_Thomas_Resume.pdf'
 const Header = () => {
 
   const onButtonClick = () => {
