@@ -3,6 +3,18 @@ import { Button } from "@nextui-org/react";
 import Resume from '../../assets/resume/Kieron-Thomas-Resume.pdf'
 const Header = () => {
 
+  const onButtonClick = () => {
+    fetch(Resume).then(response => {
+      response.blob().then(blob => {
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = 'Kieron-Thomas-Resume';
+        alink.click();
+      })
+    })
+  }
+
   return (
     <div className="relative z-10 p-3 text-white h-[500px] font-inter md:h-[700px] md:pt-[150px]">
       <div className="flex h-full w-full flex-col items-center justify-center gap-[30px] md:flex-row">
@@ -15,15 +27,14 @@ const Header = () => {
             Your Junior React Developer
           </p>
           <div className="mt-5 flex flex-col gap-3 md:flex-row">
-            <a download={true} href={Resume} target="_blank">
             <Button
               className="flex w-full hover:scale-[1.05] md:w-[150px]"
               color="secondary"
               variant="shadow"
+              onClick={onButtonClick}
             >
               Project Resumé
             </Button>
-            </a>
             <a href="/contact">
               <Button
                 className="mt-2 flex w-full hover:scale-[1.05] md:w-[100px] md:mt-0"
