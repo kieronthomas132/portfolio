@@ -1,4 +1,4 @@
-import Male from "../../assets/male.svg";
+import Male from "../../assets/generic/male.svg";
 import { aboutArray } from "./AboutArray.tsx";
 const About = () => {
   return (

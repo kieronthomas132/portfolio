@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png";
+import logo from "../../assets/generic/logo.png";
 import { LiaSmileWinkSolid } from "react-icons/lia";
 import { Image } from "@nextui-org/react";
 

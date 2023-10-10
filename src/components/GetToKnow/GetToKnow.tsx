@@ -1,8 +1,8 @@
 import { Card, CardHeader, Image } from "@nextui-org/react";
-import TechStack from "../../assets/techstack.png";
-import Project_Collage from "../../assets/project_collage.svg";
-import Me from "../../assets/me.png";
-import Development from "../../assets/goal.svg";
+import TechStack from "../../assets/generic/techstack.png";
+import Project_Collage from "../../assets/generic/project_collage.svg";
+import Me from "../../assets/generic/me.png";
+import Development from "../../assets/generic/goal.svg";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 

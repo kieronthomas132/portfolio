@@ -1,7 +1,7 @@
 import "./index.css";
 import Nav from "./components/Nav/Nav.tsx";
 import Small_Nav from "./components/SmallNav/Small_Nav.tsx";
-import logo from "./assets/logo.png";
+import logo from "./assets/generic/logo.png";
 import {routes} from './components/routes/routes.tsx'
 import { Routes, Route } from "react-router";
 import BlurHeader from "./components/Blur/BlurHeader.tsx";

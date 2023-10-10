@@ -1,5 +1,5 @@
 import { Card, CardBody, CardHeader, Image, Link } from "@nextui-org/react";
-import SpotifyLogo from "../../assets/spotify_image.png";
+import SpotifyLogo from "../../assets/generic/spotify_image.png";
 import SpotifySmall from "../../assets/project_images/spotify_small.png";
 import HomeLand from "../../assets/project_images/Homeland.png";
 import HomeLandSmall from "../../assets/project_images/homeland_small.png";

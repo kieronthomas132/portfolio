@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/generic/logo.png";
 import {
   Tooltip,
   Link,
