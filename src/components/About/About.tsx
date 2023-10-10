@@ -2,25 +2,25 @@ import Male from "../../assets/male.svg";
 import { aboutArray } from "./AboutArray.tsx";
 const About = () => {
   return (
-    <div className="text-white md:w-[80%] w-full mx-auto h-full  relative font-inter pt-[45px] md:pt-[280px] p-3">
+    <div className="relative mx-auto h-full w-full p-3 text-white font-inter pt-[45px] md:w-[80%] md:pt-[280px]">
       <div>
-        <h1 className="md:text-7xl text-4xl font-bold">
+        <h1 className="text-4xl font-bold md:text-7xl">
           <span className="text-neutral-500">A little</span> bit about me
-          <div className="w-full h-[2px] mt-4 bg-neutral-700" />
+          <div className="mt-4 w-full bg-neutral-700 h-[2px]" />
         </h1>
-        <div className="h-[760px] w-full md:flex mt-10 text-medium font-bold text-neutral-600">
+        <div className="mt-10 w-full font-bold text-neutral-600 h-[760px] text-medium md:flex">
           <div className="relative z-10">
             {aboutArray.map((about, index) => (
               <div key={index}>
                 <h3 className="mt-5">{about.title}</h3>
-                <p className="text-neutral-400 mt-2 font-semibold text-lg md:w-[600px]">
+                <p className="mt-2 text-lg font-semibold text-neutral-400 md:w-[600px]">
                   {about.content}
                 </p>
               </div>
             ))}
           </div>
-          <div className="w-[600px] ml-[30px] relative z-0 hidden lg:flex">
-            <img src={Male} className="min-w-[500px] mx-auto" alt={Male} />
+          <div className="relative z-0 hidden w-[600px] ml-[30px] lg:flex">
+            <img src={Male} className="mx-auto min-w-[500px]" alt={Male} />
           </div>
         </div>
       </div>

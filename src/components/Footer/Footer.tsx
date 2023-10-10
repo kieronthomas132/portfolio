@@ -4,19 +4,19 @@ import { Image } from "@nextui-org/react";
 
 const Footer = () => {
   return (
-    <div className="text-white z-10 font-inter h-[500px] md:h-[100%] relative p-2 w-[100%] mx-auto">
-      <div className="w-[100%] h-[2.5px] bg-neutral-600 opacity-50" />
-      <div className="w-[80%] items-center md:justify-between md:flex-row flex-col flex h-[400px] mx-auto p-4">
-        <div className="h-[300px] text-sm italic text-neutral-400 font-bold ">
+    <div className="relative z-10 mx-auto p-2 text-white font-inter h-[500px] w-[100%] md:h-[100%]">
+      <div className="bg-neutral-600 opacity-50 w-[100%] h-[2.5px]" />
+      <div className="mx-auto flex flex-col items-center p-4 w-[80%] h-[400px] md:flex-row md:justify-between">
+        <div className="text-sm font-bold italic text-neutral-400 h-[300px]">
           <Image src={logo} className="w-[150px]" />
           <span className="flex items-center gap-1">
             <h2>Thank you for coming by!</h2>
             <LiaSmileWinkSolid style={{ fontSize: "1.8rem" }} />
           </span>
         </div>
-        <div className=" h-[100%] w-[400px] gap-2 flex-col flex items-center justify-center text-center">
-          <h1 className="text-white font-bold">Links</h1>
-          <ol className="text-neutral flex flex-col gap-4">
+        <div className="flex flex-col items-center justify-center gap-2 text-center h-[100%] w-[400px]">
+          <h1 className="font-bold text-white">Links</h1>
+          <ol className="flex flex-col gap-4 text-neutral">
             <li>
               <a href="/about">About</a>
             </li>

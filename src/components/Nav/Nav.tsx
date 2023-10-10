@@ -18,30 +18,30 @@ const Nav = () => {
   };
 
   return (
-    <div className="w-[60%] z-20  font-roboto text-neutral-400  cursor-pointer absolute top-[50px] p-3 bg-opacity-20  rounded-lg left-[20%] bg-neutral-800 ">
+    <div className="absolute z-20 cursor-pointer rounded-lg bg-neutral-800 bg-opacity-20 p-3 text-neutral-400 w-[60%] font-roboto top-[50px] left-[20%]">
       <div className="flex items-center justify-between">
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <a href="/">
             <img src={logo} className="w-[60px]" alt="logo" />
           </a>
           <div className="flex items-center gap-4">
             <a href="/projects">
-              <h1 className="hover:text-white transition-all ease-in-out duration-500 cursor-pointer">
+              <h1 className="cursor-pointer transition-all duration-500 ease-in-out hover:text-white">
                 Projects
               </h1>
             </a>
             <a href="/about">
-              <h1 className="hover:text-white transition-all ease-in-out duration-500 cursor-pointer">
+              <h1 className="cursor-pointer transition-all duration-500 ease-in-out hover:text-white">
                 About
               </h1>
             </a>
             <a href="/contact">
-              <h1 className="hover:text-white transition-all ease-in-out duration-500 cursor-pointer">
+              <h1 className="cursor-pointer transition-all duration-500 ease-in-out hover:text-white">
                 Contact
               </h1>
             </a>
             <div
-              className="flex hover:text-white transition-all ease-in-out duration-500"
+              className="flex transition-all duration-500 ease-in-out hover:text-white"
               onMouseEnter={() => setIsHovered(true)}
             >
               <h1>More</h1>
@@ -54,12 +54,12 @@ const Nav = () => {
               </motion.div>
             </div>
             <div
-              className="absolute left-[270px] z-10 h-[120px] -bottom-[80px] flex items-end"
+              className="absolute z-10 flex items-end left-[270px] h-[120px] -bottom-[80px]"
               onMouseLeave={() => setIsHovered(false)}
             >
               {isHovered ? (
                 <div>
-                  <ol className="bg-neutral-950 rounded-b-2xl bg-opacity-20 p-4">
+                  <ol className="rounded-b-2xl bg-opacity-20 p-4 bg-neutral-950">
                     <a href='/techstack'>
                     <li className="hover:text-white">Tech Stack</li>
                     </a>
@@ -79,7 +79,7 @@ const Nav = () => {
             isExternal
             href="https://github.com/kieronthomas132"
           >
-            <h3 className="hover:text-white text-3xl">
+            <h3 className="text-3xl hover:text-white">
               <FaGithub />
             </h3>
           </Link>

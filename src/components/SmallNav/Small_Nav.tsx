@@ -23,15 +23,15 @@ const Small_Nav = () => {
   ];
 
   return (
-    <div className="fixed bottom-5 left-0 right-0 p-5 z-20">
-      <div className="text-white w-[100%] backdrop-blur-lg bg-opacity-40 rounded-lg bg-neutral-900 ">
+    <div className="fixed right-0 bottom-5 left-0 z-20 p-5">
+      <div className="rounded-lg bg-neutral-900 bg-opacity-40 text-white backdrop-blur-lg w-[100%]">
         <div
           className="flex items-center justify-evenly gap-2 p-2"
         >
           {navOptions.map((option) => (
               <a href={option.link} key={option.title}>
                 <Tooltip content={option.title}>
-                  <div className='text-2xl w-[50px] bg-neutral-600 flex hover:bg-opacity-100 cursor-pointer justify-center p-2 rounded-md bg-opacity-60'>
+                  <div className='flex cursor-pointer justify-center rounded-md bg-neutral-600 bg-opacity-60 p-2 text-2xl w-[50px] hover:bg-opacity-100'>
                     {option.icon}
                   </div>
                 </Tooltip>

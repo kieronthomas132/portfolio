@@ -4,13 +4,13 @@ import TechStackLarge from "./TechStackLarge.tsx";
 
 const TechStack = () => {
   return (
-    <div className="text-white md:w-[80%] w-full mx-auto h-full  relative font-inter pt-[200px] md:pt-[280px] p-8">
+    <div className="relative mx-auto h-full w-full p-8 text-white font-inter pt-[200px] md:w-[80%] md:pt-[280px]">
       <div>
-        <h1 className="md:text-7xl text-6xl font-bold">
+        <h1 className="text-6xl font-bold md:text-7xl">
           <span className="text-neutral-500">Tech </span>
           Stack
         </h1>
-        <div className="w-full h-[2px] mt-4 bg-neutral-700" />
+        <div className="mt-4 w-full bg-neutral-700 h-[2px]" />
       </div>
       <div className="mt-10">
         <h2 className="text-5xl font-bold text-neutral-200">Dev Tools</h2>

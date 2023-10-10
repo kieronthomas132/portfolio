@@ -1,44 +1,32 @@
 import image from "../../assets/image.svg";
 import { Button } from "@nextui-org/react";
+import Resume from '../../assets/resume/Kieron-Thomas-Resume.pdf'
 const Header = () => {
 
-  const Resume = '../../assets/resume/Kieron-Thomas-Resumé.pdf'
-  const onButtonClick = () => {
-    fetch(Resume).then(response => {
-      response.blob().then(blob => {
-        const fileURL = window.URL.createObjectURL(blob);
-        let alink = document.createElement('a');
-        alink.href = fileURL;
-        alink.download = 'Kieron-Thomas-Resumé';
-        alink.click();
-      })
-    })
-  }
-
-
   return (
-    <div className="text-white  md:h-[700px] h-[500px] z-10 relative font-inter md:pt-[150px] p-3">
-      <div className="flex flex-col md:flex-row justify-center gap-[30px] items-center w-full h-full">
-        <div className="text-center flex flex-col gap-2 text-5xl md:text-7xl font-bold">
+    <div className="relative z-10 p-3 text-white h-[500px] font-inter md:h-[700px] md:pt-[150px]">
+      <div className="flex h-full w-full flex-col items-center justify-center gap-[30px] md:flex-row">
+        <div className="flex flex-col gap-2 text-center text-5xl font-bold md:text-7xl">
           <h1>
             <span className="text-neutral-500">I'm</span> Kieron Thomas
           </h1>
-          <p className="text-xl md:w-[600px] text-neutral-300 font-medium md:text-start">
+          <p className="text-xl font-medium text-neutral-300 md:w-[600px] md:text-start">
             Crafting Dynamic Web Experiences: Eager to Learn, Ready to Grow -
             Your Junior React Developer
           </p>
-          <div className="flex flex-col md:flex-row mt-5 gap-3 ">
-              <Button
-                className="w-full md:w-[150px] flex hover:scale-[1.05]"
-                color="secondary"
-                variant="shadow"
-                onClick={onButtonClick}
-              >
-                Project Resumé
-              </Button>
+          <div className="mt-5 flex flex-col gap-3 md:flex-row">
+            <a download={true} href={Resume} target="_blank">
+            <Button
+              className="flex w-full hover:scale-[1.05] md:w-[150px]"
+              color="secondary"
+              variant="shadow"
+            >
+              Project Resumé
+            </Button>
+            </a>
             <a href="/contact">
               <Button
-                className="w-full md:w-[100px] flex mt-2 md:mt-0 hover:scale-[1.05]"
+                className="mt-2 flex w-full hover:scale-[1.05] md:w-[100px] md:mt-0"
                 color="secondary"
                 variant="ghost"
               >
@@ -47,7 +35,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-        <div className="text-center hidden lg:block">
+        <div className="hidden text-center lg:block">
           <img src={image} className="w-[450px]" alt="header_image" />
         </div>
       </div>

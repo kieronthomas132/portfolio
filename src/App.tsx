@@ -10,10 +10,10 @@ import BlurFooter from "./components/Blur/BlurFooter.tsx";
 const App = () => {
 
   return (
-    <div className="bg-main-bg relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden bg-main-bg">
       <img
         src={logo}
-        className="flex w-[100px] md:hidden mx-auto items-center text-center justify-center"
+        className="mx-auto flex items-center justify-center text-center w-[100px] md:hidden"
         alt="logo"
       />
       <BlurHeader />
@@ -25,7 +25,7 @@ const App = () => {
           <Route path={route.path} element={route.element} />
         </Routes>
       ))}
-      <div className="md:hidden flex">
+      <div className="flex md:hidden">
         <Small_Nav />
       </div>
       <Footer />

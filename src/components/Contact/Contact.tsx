@@ -74,28 +74,28 @@ const Contact = () => {
 
   return (
     <div
-      className="text-white md:w-[80%] w-full mx-auto h-[750px] md:h-full relative font-inter pt-[45px] md:mt-[150px] isolate sm:py-20 "
+      className="relative isolate mx-auto w-full text-white h-[750px] font-inter pt-[45px] sm:py-20 md:w-[80%] md:mt-[150px] md:h-full"
       id="contact"
       ref={ref}
     >
-      <h1 className="md:text-7xl w-[95%] md:w-[70%] mx-auto text-6xl text-neutral-400 font-bold">
+      <h1 className="mx-auto text-6xl font-bold text-neutral-400 w-[95%] md:w-[70%] md:text-7xl">
         Contact
       </h1>
       <form ref={form} onSubmit={handleClick}>
-        <div className="flex justify-center my-5">
+        <div className="my-5 flex justify-center">
           {loading ? (
             <CircularProgress color="secondary" label="Sending Message" />
           ) : null}
           <h3>{sendEmail && !loading ? sendEmail : null}</h3>
         </div>
-        <div className=" w-[100%] md:w-[70%] mx-auto">
+        <div className="mx-auto w-[100%] md:w-[70%]">
           <Form />
-          <div className="py-5 md:w-[100%] w-[95%] mx-auto">
+          <div className="mx-auto py-5 w-[95%] md:w-[100%]">
             <button
               onClick={handleClick}
               value="Send"
               type="submit"
-              className="block w-full rounded-md bg-indigo-600  py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="block w-full rounded-md bg-indigo-600 text-center text-sm font-semibold text-white shadow-sm py-2.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Let's talk
             </button>

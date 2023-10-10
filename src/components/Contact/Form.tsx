@@ -2,7 +2,7 @@ import { Input, Textarea } from "@nextui-org/react";
 import { formArray } from "./FormArray.tsx";
 const Form = () => {
   return (
-    <div className="px-2 md:px-0 grid grid-cols-1 gap-5 pt-5 sm:grid-cols-2 w-[95%] md:w-[100%] mx-auto">
+    <div className="mx-auto grid grid-cols-1 gap-5 px-2 pt-5 w-[95%] sm:grid-cols-2 md:w-[100%] md:px-0">
       <div className="pt-2.5">
         <Input
           type={formArray.firstName.type}
