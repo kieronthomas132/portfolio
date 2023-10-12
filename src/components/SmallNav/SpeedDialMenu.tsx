@@ -1,41 +1,49 @@
-import SpeedDial from "@mui/material/SpeedDial";
-import SpeedDialIcon from "@mui/material/SpeedDialIcon";
-import SpeedDialAction from "@mui/material/SpeedDialAction";
-import { FaReact } from "react-icons/fa";
-import { BsFillBarChartFill } from "react-icons/bs";
-import { SiAboutdotme } from "react-icons/si";
+import { useEffect, useState } from 'react';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialIcon from '@mui/material/SpeedDialIcon';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import { FaReact } from 'react-icons/fa';
+import { BsFillBarChartFill } from 'react-icons/bs';
+import { SiAboutdotme } from 'react-icons/si';
 
 const actions = [
     {
         icon: <FaReact style={{ fontSize: 20 }} />,
-        name: "Tech Stack",
-        link: "/techstack",
+        name: 'Tech Stack',
+        link: '/techstack',
     },
     {
         icon: <BsFillBarChartFill style={{ fontSize: 20 }} />,
-        name: "Professional Development",
-        link: "/development",
+        name: 'Professional Development',
+        link: '/development',
     },
     {
         icon: <SiAboutdotme style={{ fontSize: 20 }} />,
-        name: "About",
-        link: "/about",
+        name: 'About',
+        link: '/about',
     },
 ];
 
 const SpeedDialMenu = () => {
+    const [isSafari, setIsSafari] = useState(false);
+
+    useEffect(() => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        setIsSafari(userAgent.includes('safari') && !userAgent.includes('chrome'));
+    }, []);
+
     return (
         <SpeedDial
             ariaLabel="SpeedDial basic example"
             sx={{
-                position: "fixed",
-                bottom: "5%",
-                right: "5%",
-                "& .MuiFab-primary": {
+                position: 'fixed',
+                bottom: isSafari ? '5%' : '10%', // Adjust position for Safari
+                right: '5%',
+                '& .MuiFab-primary': {
                     width: 45,
                     height: 45,
-                    backgroundColor: "#3E3E3E",
-                    "&:hover": { backgroundColor: "#525252" },
+                    backgroundColor: '#3E3E3E',
+                    '&:hover': { backgroundColor: '#525252' },
                 },
             }}
             icon={<SpeedDialIcon />}
