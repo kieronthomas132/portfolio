@@ -37,7 +37,7 @@ const SpeedDialMenu = () => {
             ariaLabel="SpeedDial basic example"
             sx={{
                 position: 'fixed',
-                bottom: isSafari ? '7%' : '10%',
+                bottom: isSafari ? '5.5%' : '10%',
                 right: '5%',
                 '& .MuiFab-primary': {
                     width: 45,
