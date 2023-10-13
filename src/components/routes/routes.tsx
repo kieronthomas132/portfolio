@@ -7,7 +7,7 @@ import TechStack from "../TechStack/TechStack.tsx";
 import ProfessionalDevelopment from "../ProfessionalDevelopment/ProfessionalDevelopment.tsx";
 import Contact from "../Contact/Contact.tsx";
 
-export   const routes = [
+export const routes = [
     {
         path: "/",
         element: <Header />,
