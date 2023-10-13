@@ -27,10 +27,10 @@ const actions = [
 const SpeedDialMenu = () => {
     const [isSafari, setIsSafari] = useState(false);
 
+
     useEffect(() => {
         const userAgent = window.navigator.userAgent.toLowerCase();
         setIsSafari(userAgent.includes('safari') && !userAgent.includes('chrome'));
-    console.log(userAgent)
         }, []);
 
     return (
