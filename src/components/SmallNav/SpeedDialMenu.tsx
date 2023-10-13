@@ -32,20 +32,22 @@ const SpeedDialMenu = () => {
         const userAgent = window.navigator.userAgent.toLowerCase();
         setIsSafari(userAgent.includes('safari') && !userAgent.includes('chrome'));
 
-        const deviceHeight = window.innerHeight;
-        if (deviceHeight <= 568) {
-            setBottomPosition('8%');
+        const deviceWidth = window.innerWidth;
+        if (deviceWidth <= 568) {
+            setBottomPosition('10%');
         } else {
             setBottomPosition('10%');
         }
-    }, []);
+    }, [bottomPosition]);
+
+    console.log(bottomPosition)
 
     return (
         <SpeedDial
             ariaLabel="SpeedDial basic example"
             sx={{
                 position: 'fixed',
-                bottom: isSafari ? '5.7%' : bottomPosition,
+                bottom: isSafari && !bottomPosition ? '5.7%' : bottomPosition,
                 right: '5%',
                 '& .MuiFab-primary': {
                     width: 45,
