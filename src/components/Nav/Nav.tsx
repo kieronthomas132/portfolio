@@ -5,11 +5,19 @@ import {
   Link,
 } from "@nextui-org/react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { motion } from "framer-motion";
 
 const Nav = () => {
+  const [isSafari, setIsSafari] = useState(false);
+
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    setIsSafari(userAgent.includes('safari') && !userAgent.includes('chrome'));
+
+  }, [])
 
   const arrowVariant = {
     hover: {
@@ -41,7 +49,7 @@ const Nav = () => {
               </h1>
             </a>
             <div
-              className="flex transition-all duration-500 ease-in-out hover:text-white"
+              className={`flex transition-all ${isSafari ? "pt-[5px]" : ""}  duration-500 ease-in-out hover:text-white`}
               onMouseEnter={() => setIsHovered(true)}
             >
               <h1>More</h1>
@@ -70,7 +78,6 @@ const Nav = () => {
               ) : null}
             </div>
 
-            <div></div>
           </div>
         </div>
         <Tooltip content="Github" color="secondary">

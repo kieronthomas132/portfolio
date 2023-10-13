@@ -22,7 +22,7 @@ const TechStackLarge = () => {
                   hoveredIndex === index
                     ? "right-[15px] top-[10px] opacity-100 "
                     : "right-[25px] top-[20px] opacity-0"
-                } absolute text-2xl transition-all ease-in-out duration-200 `}
+                } absolute text-2xl transform transition-all ease-in-out duration-200 `}
               >
                 <FiArrowUpRight />
               </div>

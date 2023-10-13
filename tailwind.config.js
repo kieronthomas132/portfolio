@@ -12,8 +12,18 @@ export default {
         montserrat: "Montserrat, sans-serif",
         inter: "Inter, sans-serif",
       },
+      boxShadow: {
+        'small_nav': '0 4px 30px rgba(0, 0, 0, 0.1)',
+        'modal': '0 4px 30px rgba(0, 0, 0, 0.1)'
+      },
+      borderColor: {
+        'small_nav': '#3a383880',
+        'modal': '#171717e0'
+      },
       backgroundColor: {
         "main-bg": "#0D0D0D",
+        "small_nav": "rgba(23,22,22,0.55)",
+        "modal": "#171717c4"
       },
       screens: {
         xxs: "270px",
