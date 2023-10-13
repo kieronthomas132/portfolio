@@ -37,7 +37,7 @@ const Small_Nav = () => {
                 </Tooltip>
               </a>
           ))}
-          <div className='xxs:p-3 xs:p-0.5 sm:p-0'>
+          <div className='xxs:p-3 xs:p-2'>
             <SpeedDialMenu />
           </div>
         </div>

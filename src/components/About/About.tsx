@@ -2,7 +2,7 @@ import Male from "../../assets/generic/male.svg";
 import { aboutArray } from "./AboutArray.tsx";
 const About = () => {
   return (
-    <div className="relative mx-auto h-full w-full p-3 text-white font-inter pt-[45px] md:w-[80%] md:pt-[280px]">
+    <div className="relative mx-auto h-[1050px] md:h-full w-full p-3 text-white font-inter pt-[45px] md:w-[80%] md:pt-[280px]">
       <div>
         <h1 className="text-4xl font-bold md:text-7xl">
           <span className="text-neutral-500">A little</span> bit about me
