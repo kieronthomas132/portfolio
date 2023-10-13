@@ -36,7 +36,7 @@ const SpeedDialMenu = () => {
         if (deviceWidth <= 568) {
             setBottomPosition('10%');
         } else {
-            setBottomPosition('10%');
+            setBottomPosition('8%');
         }
     }, [bottomPosition]);
 
