@@ -12,14 +12,9 @@ export const reactProjects = [
     img: Spotify_Clone,
     title: "Spotify Clone",
     featured: true,
-    seeCode: "https://github.com/kieronthomas132/spotify_clone",
-    seeLive: "https://spotify-clone-rho-pearl.vercel.app/",
-    description:
-      "A clone of Spotify with the intent to match the original\n" +
-      "application as close as possible in terms of design and\n" +
-      "functionality. This application is built using Firebase to allow\n" +
-      "for user authentication and provide the ability to create\n" +
-      "personalized playlists with their favorite artists and tracks!",
+    seeCode: "https://github.com/kieronthomas132/spotify_fullstack",
+    seeLive: "https://spotify-fullstack-alpha.vercel.app/home",
+    description:"As an avid music fan, I decided my most ambitious and biggest project would be to create this Spotify Clone. Built with Node.js, Express, MongoDB, React, and TypeScript, it's a full-stack clone aiming to replicate Spotify's vibe. Using the Spotify API via RapidAPI, this application has got all the music stuff—artists, albums, playlists, and tracks. I've poured my heart into perfecting the user experience, diving into modern tech and APIs.",
     techStack: ["Typescript", "Spotify API", "Axios"],
   },
   {

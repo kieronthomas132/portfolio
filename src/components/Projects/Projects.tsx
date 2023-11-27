@@ -16,23 +16,26 @@ const Projects = () => {
             </CardHeader>
             <CardBody className="text-start text-lg text-neutral-400 md:w-[100%]">
               <p>
-                A clone of Spotify with the intent to match the original
-                application as close as possible in terms of design and
-                functionality. This application is built using Firebase to allow
-                for user authentication and provide the ability to create
-                personalized playlists with their favorite artists and tracks!
+                As an avid music fan, I decided my most ambitious and biggest
+                project would be to create this Spotify Clone. Built with
+                Node.js, Express, MongoDB, React, and TypeScript, it's a
+                full-stack clone aiming to replicate Spotify's vibe. Using the
+                Spotify API via RapidAPI, this application has got all the music
+                stuff—artists, albums, playlists, and tracks. I've poured my
+                heart into perfecting the user experience, diving into modern
+                tech and APIs.
               </p>
               <div className="mt-5 flex flex-col justify-end gap-2 font-bold h-[100%]">
                 <Link
                   isExternal={true}
-                  href="https://spotify-clone-rho-pearl.vercel.app/"
+                  href="https://github.com/kieronthomas132/spotify_fullstack"
                   color="success"
                 >
                   <span>See Live Version</span>
                 </Link>
                 <Link
                   isExternal={true}
-                  href="https://github.com/kieronthomas132/spotify_clone"
+                  href="https://spotify-fullstack-alpha.vercel.app/home"
                   color="success"
                 >
                   <span>See Code</span>
