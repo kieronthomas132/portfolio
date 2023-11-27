@@ -2,14 +2,13 @@ import image from "../../assets/generic/image.svg";
 import { Button } from "@nextui-org/react";
 import Resume from "../../assets/Kieron_Thomas_Resume.pdf"
 const Header = () => {
-
   const onButtonClick = () => {
     fetch(Resume).then(response => {
       response.blob().then(blob => {
         const fileURL = window.URL.createObjectURL(blob);
         let alink = document.createElement('a');
         alink.href = fileURL;
-        alink.download = 'Kieron-Thomas-Resume';
+        alink.download = 'Kieron-Thomas-Resume.pdf';
         alink.click();
       })
     })
