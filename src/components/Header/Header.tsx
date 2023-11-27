@@ -6,7 +6,7 @@ const Header = () => {
   const download = (url: string) => {
     const a = document.createElement("a");
     a.href = url;
-    a.download = "Kieron_Thomas_Resume"; // file name
+    a.download = "Kieron_Thomas_Resume";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
