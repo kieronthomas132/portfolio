@@ -1,6 +1,6 @@
 import image from "../../assets/generic/image.svg";
 import { Button } from "@nextui-org/react";
-import Resume from "../../assets/Kieron_Thomas_Resume.pdf"
+import ResumePDF from "../../assets/Kieron_Thomas_Resume.pdf";
 const Header = () => {
 
   return (
@@ -15,7 +15,7 @@ const Header = () => {
             Your Junior React Developer
           </p>
           <div className="mt-5 flex flex-col gap-3 md:flex-row">
-            <a href={Resume} download='Kieron_Thomas_Resume'>
+            <a href={ResumePDF} download='Kieron_Thomas_Resume.pdf'>
               <Button
                   className="flex w-full hover:scale-[1.05] md:w-[150px]"
                   color="secondary"
