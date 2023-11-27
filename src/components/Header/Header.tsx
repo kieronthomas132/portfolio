@@ -1,6 +1,7 @@
-import image from "../../assets/generic/image.svg";
 import { Button } from "@nextui-org/react";
 import Resume from '../../../public/Kieron_Thomas_Resume.pdf'
+import Lottie from "lottie-react";
+import animation from '../../../public/computer_animation.json'
 const Header = () => {
 
   return (
@@ -35,8 +36,8 @@ const Header = () => {
             </a>
           </div>
         </div>
-        <div className="hidden text-center lg:block">
-          <img src={image} className="w-[450px]" alt="header_image" />
+        <div className=' w-[500px] hidden md:flex'>
+          <Lottie animationData={animation}/>
         </div>
       </div>
     </div>
