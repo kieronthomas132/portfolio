@@ -1,16 +1,7 @@
 import image from "../../assets/generic/image.svg";
 import { Button } from "@nextui-org/react";
-import Resume from '../../assets/Kieron_Thomas_Resume.pdf'
+import Resume from '../../../public/Kieron_Thomas_Resume.pdf'
 const Header = () => {
-
-  const download = (url: string) => {
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Kieron_Thomas_Resume";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
 
   return (
     <div className="relative z-10 p-3 text-white h-[500px] font-inter md:h-[700px] md:pt-[150px]">
@@ -24,14 +15,15 @@ const Header = () => {
             Your Junior React Developer
           </p>
           <div className="mt-5 flex flex-col gap-3 md:flex-row">
+            <a href={Resume} download='Kieron_Thomas_Resume'>
               <Button
-                  onClick={() => download(Resume)}
                   className="flex w-full hover:scale-[1.05] md:w-[150px]"
                   color="secondary"
                   variant="shadow"
               >
                 Project Resumé
               </Button>
+            </a>
             <a href="/contact">
               <Button
                 className="mt-2 flex w-full hover:scale-[1.05] md:w-[100px] md:mt-0"
