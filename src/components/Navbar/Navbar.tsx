@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="flex justify-around items-center p-2">
         <img src={Logo} className=" w-[35px]" alt="logo" />
         <div>
-          <ul className="flex items-center gap-[10px] md:gap-[80px]">
+          <ul className="flex items-center text-sm gap-[10px] md:gap-[80px]">
             {navbarOptions.map((nav, index) => (
               <li key={index} >
                 <a href={nav?.link}>
