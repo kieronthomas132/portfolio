@@ -2,7 +2,7 @@ import {Tooltip} from "@nextui-org/react";
 import HomelandImage from "../../assets/homeland.png";
 import {RiComputerLine} from "react-icons/ri";
 import {FaCode} from "react-icons/fa6";
-import gradient from "../../assets/Gradient.svg";
+import gradient from "../../assets/gradient.svg";
 import {useEffect, useRef} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";

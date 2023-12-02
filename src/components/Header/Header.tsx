@@ -2,7 +2,7 @@ import arrow from "../../assets/arrow.svg";
 import {Suspense} from "react";
 import {dotArray} from "./HeaderDots.tsx";
 import {Image, CircularProgress} from '@nextui-org/react'
-import Gradient from "../../assets/gradient.svg";
+import gradient from '../../assets/gradient.svg'
 import ellipse from "../../assets/Ellipse.svg";
 import Memoji from "../../assets/Memoji.png";
 import { useEffect, useRef } from "react";
@@ -42,7 +42,7 @@ const Header = () => {
       <div className="z-10 flex-col md:flex md:flex-row justify-center items-center relative">
         <div className="flex justify-center">
           <img
-            src={Gradient}
+            src={gradient}
             className="md:w-[400px] h-[420px] -left-[5px] md:-left-[45px] absolute z-0"
             alt="Gradient Background"
           />
