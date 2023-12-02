@@ -1,23 +1,8 @@
 import Logo from "../../assets/Logo.svg";
-import { FaGithub } from "react-icons/fa";
 import {Button, Tooltip} from "@nextui-org/react";
 import Resume from '../../../public/Kieron_Thomas_Resume.pdf'
+import {navbarOptions} from './navbarOptions.tsx'
 const Navbar = () => {
-  const navbarOptions = [
-    {
-      title: "Projects",
-      link: "#projects",
-    },
-    {
-      title: "Connect",
-      link: "#connect",
-    },
-    {
-      label: "Github",
-      link: "https://github.com/kieronthomas132?tab=repositories",
-      icon: <FaGithub />,
-    },
-  ];
   return (
     <nav className="bg-[#1A0A2E] h-[80px] font-inter flex flex-col justify-center text-white">
       <div className="flex justify-around items-center p-2">
