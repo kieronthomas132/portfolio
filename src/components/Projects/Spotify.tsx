@@ -87,10 +87,9 @@ const Spotify = () => {
           to make a variation of the music streaming site Spotify. This
           application allows users to create their own accounts and make their
           own playlists!
-          <h3 className="text-orange-400 text-[12px] mt-[5px]">
-            The backend of this project is hosted on the free tier of Render,
-            and so may take a minute to get the server running on initial fetch.
-            Please be patient, thank you :)
+          <h3 className="text-orange-400 font-[500] text-[12px] mt-[5px]">
+              I am currently experiencing some problems with the server of this project
+              and so it is out of commission until i can get it sorted. Apologies
           </h3>
           <div className="flex items-center gap-[30px] text-[20px] mt-[10px]">
             <Tooltip content="see live!" color="secondary">
