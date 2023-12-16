@@ -1,4 +1,4 @@
-import SpotifyImage from "../../assets/spotify_image.png";
+import crypto from "../../assets/Crypto.png";
 import { Tooltip } from "@nextui-org/react";
 import { RiComputerLine } from "react-icons/ri";
 import { FaCode } from "react-icons/fa6";
@@ -7,22 +7,22 @@ import { useEffect, useRef } from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 
-const Spotify = () => {
+const Crypto = () => {
     gsap.registerPlugin(ScrollTrigger);
-  const spotifyTextRef = useRef(null);
-  const spotifyHeaderRef = useRef(null);
-  const spotifyImageRef = useRef(null);
+    const cryptoTextRef = useRef(null)
+  const cryptoHeaderRef = useRef(null);
+  const cryptoImageRef = useRef(null);
 
   useEffect(() => {
       const screenWidth = window.innerWidth;
     if (screenWidth > 768) {
-      const spotifyText = spotifyTextRef.current;
-      const spotifyHeader = spotifyHeaderRef.current;
-      const spotifyImage = spotifyImageRef.current;
+      const cryptoText = cryptoTextRef.current;
+      const cryptoHeader = cryptoHeaderRef.current;
+      const cryptoImage = cryptoImageRef.current;
 
-        const spotify_tl = gsap.timeline({
+        const crypto_tl = gsap.timeline({
             scrollTrigger: {
-                trigger: spotifyText,
+                trigger: cryptoText,
                 start: "top 80%",
                 end: "bottom 80%",
                 scrub: true,
@@ -30,8 +30,8 @@ const Spotify = () => {
         });
 
 
-        spotify_tl.fromTo(
-            spotifyImage,
+        crypto_tl.fromTo(
+            cryptoImage,
             {
                 x: 500,
                 opacity: 0,
@@ -43,8 +43,8 @@ const Spotify = () => {
             },
         );
 
-        spotify_tl.fromTo(
-            spotifyHeader,
+        crypto_tl.fromTo(
+            cryptoHeader,
             {
                 x: -500,
                 opacity: 0,
@@ -56,8 +56,8 @@ const Spotify = () => {
             },
         );
 
-        spotify_tl.fromTo(
-            spotifyText,
+        crypto_tl.fromTo(
+            cryptoText,
             {
                 x: -500,
                 opacity: 0,
@@ -75,26 +75,18 @@ const Spotify = () => {
 
   return (
     <div>
-      <div ref={spotifyHeaderRef}>
-        <h4 className="text-[#7127BA] font-preahvihear">Featured Project</h4>
+      <div ref={cryptoHeaderRef}>
         <h1 className="mt-[10px] text-[28px] font-preahvihear">
-          Spotify Clone
+          CryptoCurrency Converter
         </h1>
       </div>
       <div className="flex flex-col items-cnter justify-center">
-        <div ref={spotifyTextRef} className="bg-white/5 font-poppins leading-7 rounded-lg font-[400] relative z-10 p-2 text-[14px] lg:w-[750px]  mt-[10px] text-[#CCD6F6] bg-opacity-30 backdrop-blur-md drop-shadow-lg">
-          My first full stack project! As a avid music fan it seemed only right
-          to make a variation of the music streaming site Spotify. This
-          application allows users to create their own accounts and make their
-          own playlists!
-          <h3 className="text-orange-400 font-[500] text-[12px] mt-[5px]">
-              I am currently experiencing some problems with the server of this project
-              and so it is out of commission until i can get it sorted. Apologies
-          </h3>
+        <div ref={cryptoTextRef} className="bg-white/5 font-poppins leading-7 rounded-lg font-[400] relative z-10 p-2 text-[14px] lg:w-[750px]  mt-[10px] text-[#CCD6F6] bg-opacity-30 backdrop-blur-md drop-shadow-lg">
+            The cryptocurrency converter and news aggregator app utilizes the Alpha Vantage API for seamless currency conversions between cryptocurrencies, providing real-time exchange rates and insights into value changes. Additionally, it offers a curated news feed with headlines and summaries, catering to users tracking crypto trends.
           <div className="flex items-center gap-[30px] text-[20px] mt-[10px]">
             <Tooltip content="see live!" color="secondary">
               <a
-                href="https://spotify-fullstack-alpha.vercel.app/home"
+                href="https://crypto-currency-livid.vercel.app"
                 target="_blank"
                 className="text-[#7127BA] hover:text-white"
               >
@@ -103,7 +95,7 @@ const Spotify = () => {
             </Tooltip>
             <Tooltip content="see code!" color="secondary">
               <a
-                href="https://github.com/kieronthomas132/spotify_fullstack"
+                href="https://github.com/kieronthomas132/crypto_currency"
                 target="_blank"
                 className="text-[#7127BA] hover:text-white"
               >
@@ -115,11 +107,11 @@ const Spotify = () => {
         <div className=" hidden lg:flex absolute right-[450px]">
           <img src={gradient} alt="gradient" />
         </div>
-        <div ref={spotifyImageRef} className="absolute right-[230px]">
+        <div ref={cryptoImageRef} className="absolute right-[230px]">
           <img
-            src={SpotifyImage}
+            src={crypto}
             className="w-[400px] rounded-md hidden lg:flex h-[250px] object-cover"
-            alt="spotify"
+            alt="crypto"
           />
         </div>
       </div>
@@ -127,4 +119,4 @@ const Spotify = () => {
   );
 };
 
-export default Spotify;
+export default Crypto;

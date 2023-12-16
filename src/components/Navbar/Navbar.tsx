@@ -1,6 +1,6 @@
 import Logo from "../../assets/Logo.svg";
 import {Button, Tooltip} from "@nextui-org/react";
-import Resume from '../../../public/Kieron_Thomas_Resume.pdf'
+import Resume from '../../../public/Kieron-Thomas-Resume.pdf'
 import {navbarOptions} from './navbarOptions.tsx'
 const Navbar = () => {
   return (

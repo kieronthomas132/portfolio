@@ -1,4 +1,4 @@
-import Spotify from "./Spotify.tsx";
+import Spotify from "./Crypto.tsx";
 import Homeland from "./Homeland.tsx";
 import { FaGithub } from "react-icons/fa";
 
