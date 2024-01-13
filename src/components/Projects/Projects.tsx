@@ -1,29 +1,55 @@
-import Spotify from "./Crypto.tsx";
-import Homeland from "./Homeland.tsx";
-import { FaGithub } from "react-icons/fa";
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Nexus from '../Projects/Nexus.tsx'
+import Crypto from '../Projects/Crypto.tsx'
+import {useTheme} from "next-themes";
 const Projects = () => {
+  const {theme} = useTheme()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const headerAnimation = {
+    initial: {
+      opacity: 0,
+      x: -150,
+    },
+    animate: {
+      opacity: 1,
+      x: -0,
+      transition: {
+        duration: 0.9,
+        type: "spring",
+        stiffness: 200,
+        damping: 10,
+        delay: 0.8,
+      },
+    },
+  };
 
   return (
-    <div
+    <section
       id="projects"
-      className=" w-full lg:h-[800px] md:h-[550px] xs:h-full xxs:h-full  text-white relative flex-col mt-[50px] md:text-start flex  "
+      className="flex relative overflow-x-hidden z-30 gap-4 pt-[10px] flex-col items-center justify-center"
     >
-      <div className="w-[90%] md:w-[70%] mx-auto">
-        <Spotify/>
-        <Homeland/>
-      </div>
-      
-      <div className="mt-[30px] lg:mt-[130px] md:text-start text-center relative z-10 md:flex md:flex-row flex flex-col items-center gap-2 w-[70%] mx-auto font-preahvihear">
-        To see all projects visit my github!{" "}
-        <a
-          href="https://github.com/kieronthomas132?tab=repositories"
-          target="_blank"
+      <motion.div
+        whileHover={{
+          scale: 1.2,
+          transition: { type: "spring", stiffness: 250, damping: 15 },
+        }}
+      >
+        <motion.h1
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          variants={headerAnimation}
+          ref={ref}
+          className={`${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7]"}  inline-block text-transparent bg-clip-text text-[40px] lg:text-[60px] font-[600]`}
         >
-          <FaGithub className="text-[#7127BA] hover:text-white text-3xl" />
-        </a>
-      </div>
-    </div>
+          Featured Projects
+        </motion.h1>
+      </motion.div>
+      <Nexus />
+      <Crypto />
+    </section>
   );
 };
 

@@ -1,104 +1,241 @@
-import arrow from "../../assets/arrow.svg";
-import {Suspense} from "react";
-import {dotArray} from "./HeaderDots.tsx";
-import {Image, CircularProgress} from '@nextui-org/react'
-import gradient from '../../assets/gradient.svg'
-import ellipse from "../../assets/Ellipse.svg";
-import Memoji from "../../assets/Memoji.png";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-
+import memoji from "../../assets/Memoji.png";
+import { motion } from "framer-motion";
+import imageSound from "../../assets/audioAssets/image_sound.mp3";
+//@ts-ignore
+import useSound from "use-sound";
+import Typewriter from "typewriter-effect";
+import button_on from "../../assets/audioAssets/button_on.mp3";
+import button_off from "../../assets/audioAssets/button_off.mp3";
+import Kieron_Thomas_Resume from "../../../public/Kieron-Thomas-Resume.pdf";
+import darkArrow from "../../assets/arrows/dark_arrow.svg";
+import arrow from "../../assets/arrows/arrow.svg";
+import { IoLogoGithub } from "react-icons/io";
+import { useTheme } from "next-themes";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {Tooltip} from "@nextui-org/react";
 const Header = () => {
-  const dotRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const [playbackRate] = useState(2.5);
 
-  useEffect(() => {
-    const animate = () => {
-      gsap.fromTo(
-        dotRefs.current,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 0.5,
-          stagger: 0.5,
-          onComplete: () => {
-            gsap.to(dotRefs.current, {
-              opacity: 0,
-              duration: 0.5,
-              delay: 0.5,
-              onComplete: animate,
-            });
-          },
-        },
-      );
-    };
-    animate();
-  }, []);
+  const { theme } = useTheme();
+  const soundURL = imageSound;
+  const buttonOnSoundURL = button_on;
+  const buttonOffSoundURL = button_off;
 
+  const [play] = useSound(soundURL, {
+    volume: 0.5,
+    playbackRate,
+    interrupt: true,
+  });
+  const [buttonOnSound] = useSound(buttonOnSoundURL, { volume: 0.5 });
+  const [buttonOffSound] = useSound(buttonOffSoundURL, { volume: 0.5 });
+
+  const imageAnimation = {
+    hidden: { scale: 0, opacity: 0 },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        damping: 10,
+        stiffness: 200,
+        delay: 0.5,
+      },
+    },
+  };
+
+  const button1Animation = {
+    hidden: { opacity: 0, x: -100 },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        damping: 15,
+        stiffness: 200,
+        delay: 2,
+      },
+    },
+  };
+
+  const button2Animation = {
+    hidden: { opacity: 0, x: 100 },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        damping: 20,
+        stiffness: 200,
+        delay: 2,
+      },
+    },
+  };
+
+  const textAnimation = {
+    hidden: { opacity: 0, scale: 0 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+        delay: 1,
+      },
+    },
+  };
 
   return (
-    <main className="md:w-[80%] w-full md:h-[500px] font-preahvihear items-center relative justify-center flex">
-      <div className="z-10 flex-col md:flex md:flex-row justify-center items-center relative">
-        <div className="flex justify-center">
-          <img
-            src={gradient}
-            className="md:w-[400px] h-[420px] -left-[5px] md:-left-[45px] absolute z-0"
-            alt="Gradient Background"
-          />
-          <Suspense fallback={<CircularProgress color='secondary'/>}>
-            <Image
-                isZoomed={true}
-                isBlurred={true}
-                src={Memoji}
-                alt="Kieron Thomas Memoji"
-                className="w-[300px] relative z-10 -mt-4 md:mt-0 "
+    <section
+      className={`${theme === "dark" ? "text-white" : "text-black"} flex gap-4 relative py-[60px] lg:h-[720px] flex-col items-center justify-center`}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          transition: {
+            duration: 0.5,
+            delay: 0.5,
+            type: "spring",
+            damping: 15,
+            stiffness: 200,
+          },
+        }}
+        className="absolute hidden md:flex right-[35%] top-[6%]"
+      >
+        <img src={theme === "dark" ? arrow : darkArrow} alt="arrow" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          transition: {
+            duration: 0.5,
+            delay: 0.8,
+            type: "spring",
+            damping: 15,
+            stiffness: 200,
+          },
+        }}
+        className="absolute hidden md:flex right-[25%] top-[7%] font-montserrat tracking-wide leading-6 text-sm text-neutral-400 font-[300]"
+      >
+        <h4>Hi! I'm Kieron Thomas</h4>
+      </motion.div>
+      <motion.div
+        className="rounded-full"
+        onMouseOver={play}
+        whileHover={{ rotate: 25 }}
+      >
+        <motion.img
+          initial="hidden"
+          animate="animate"
+          variants={imageAnimation}
+          alt="memoji of Kieron Thomas"
+          src={memoji}
+          className={`w-[200px] rounded-full ${theme === "dark" ? "bg-gradient-to-br from-[#F57C6C] to-[#9E20DA]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7]"}`}
+        />
+      </motion.div>
+
+      <div className=" text-center w-[80%] lg:w-[40%]">
+        <h2 className="text-[35px] xs:h-[200px] sm:h-[150px] lg:h-[110px] font-[700]">
+          {theme === "dark" ? (
+            <Typewriter
+              options={{
+                strings: `I code and love picking up new things ${"<span class='animated-text' >along the way</span>"}`,
+                autoStart: true,
+                loop: false,
+                delay: 35,
+                cursor: `${"<span class='animated-text' >|</span>"}`,
+              }}
             />
-          </Suspense>
-        </div>
-
-        <div className="absolute hidden md:block top-[30px] right-[160px] w-[300px] h-[100px]">
-          <img src={arrow} className="absolute left-3 bottom-1" alt="arrow" />
-          <div className="text-white text-end">
-            <h1>
-              Hi!, <span className="text-[#7127BA]">I'm Kieron Thomas</span>
-            </h1>
-          </div>
-        </div>
-
-        <div className="text-white mt-9 z-10 flex text-center md:text-start flex-col md:w-auto w-full">
-          <h1 className="my-5 md:hidden">
-            Hi!,{" "}
-            <span className="text-[#7127BA] relative">I'm Kieron Thomas</span>
-          </h1>
-          <h3 className="text-[15px] relative underline decoration-2 decoration-slate-300 font-[200]">
-            A Junior Front-End Developer that
-          </h3>
-          <h1 className="text-[30px] md:w-[350px] text-center md:text-start mt-[5px]">
-            Sculpts functionality,
-          </h1>
-          <div className="relative">
-            <div className="absolute right-[45px] md:right-2 w-[160px] md:w-auto -bottom-[4px]">
-              <img src={ellipse} alt="background" />
-            </div>
-            <h1 className="md:text-[30px] mx-auto md:text-start text-center text-[20px] mt-[4px]">
-              not just <span className="text-[#7127BA]">appearances!</span>{" "}
-              <span>
-                {dotArray.map((dot, index) => (
-                  <span
-                    key={index}
-                    ref={(el) => (dotRefs.current[index] = el)}
-                    className="dot"
-                  >
-                    {dot.dot}
-                  </span>
-                ))}
-              </span>
-            </h1>
-          </div>
-        </div>
+          ) : (
+            <Typewriter
+              options={{
+                strings: `I code and love picking up new things ${"<span class='animated-text-light' >along the way</span>"}`,
+                autoStart: true,
+                loop: false,
+                delay: 35,
+                cursor: `${"<span class='animated-text-light' >|</span>"}`,
+              }}
+            />
+          )}
+        </h2>
       </div>
-    </main>
+
+      <motion.h3
+        initial="hidden"
+        animate="animate"
+        variants={textAnimation}
+        className="lg:w-[60%] h-auto lg:h-[140px] w-[90%] font-montserrat tracking-wide leading-6 text-sm  font-[300] text-center"
+      >
+        Hey there! I'm a React Front-End developer who loves bringing ideas to
+        life through creative development. I've got a real hunger for knowledge
+        and a genuine excitement for picking up new skills. I love learning
+        independently and working collaboratively. My aim is to contribute
+        innovative solutions that combine creativity with functionality,
+        ultimately elevating user experiences.
+      </motion.h3>
+      <motion.div
+        initial="hidden"
+        animate="animate"
+        variants={button1Animation}
+        className="flex flex-col  md:flex md:flex-row items-center gap-6 text-sm font-[600]"
+      >
+        <a href={Kieron_Thomas_Resume} download>
+          <motion.button
+            onMouseDown={buttonOnSound}
+            onMouseUp={buttonOffSound}
+            whileTap={{ scale: 1 }}
+            whileHover={{
+              scale: 1.2,
+              transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+                duration: 0.5,
+              },
+            }}
+            className={`p-2.5 ${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7]"}  text-white rounded-full`}
+          >
+            Download Project Resumé
+          </motion.button>
+        </a>
+        <a href="https://github.com/kieronthomas132">
+          <Tooltip content='Github' color='default'>
+          <button>
+          <IoLogoGithub  className={theme === "dark" ? "text-white text-[50px]" : "text-[#0F95DF] text-[50px]"}/>
+          </button>
+          </Tooltip>
+        </a>
+        <Link to="#connect">
+          <motion.button
+            onMouseDown={buttonOnSound}
+            onMouseUp={buttonOffSound}
+            whileTap={{ scale: 1 }}
+            whileHover={{
+              scale: 1.2,
+              transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+                duration: 0.5,
+              },
+            }}
+            variants={button2Animation}
+            className={`p-2.5 border-2 ${theme === "dark" ? "border-white text-white" : "border-black text-black"} w-[150px] text-center rounded-full`}
+          >
+            Get In Touch
+          </motion.button>
+        </Link>
+      </motion.div>
+    </section>
   );
 };
 
