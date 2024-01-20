@@ -208,9 +208,9 @@ const Header = () => {
         </a>
         <a href="https://github.com/kieronthomas132" target="_blank">
           <Tooltip content='Github' color='default'>
-          <button>
+          <motion.button whileHover={{scale: 1.5, transition: {type: "spring", damping: 10, stiffness: 200} }} whileTap={{scale: 1}}>
           <IoLogoGithub  className={theme === "dark" ? "text-white text-[50px]" : "text-[#0F95DF] text-[50px]"}/>
-          </button>
+          </motion.button>
           </Tooltip>
         </a>
         <a href="#connect">
