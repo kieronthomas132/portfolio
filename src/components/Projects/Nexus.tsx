@@ -3,6 +3,7 @@ import arrow from "../../assets/arrows/curvy_arrow.svg";
 import arrow2 from "../../assets/arrows/curvy_arrow_2.svg";
 import arrow_light from "../../assets/arrows/arrow_light.svg"
 import ProjectsCard from "./ProjectsCard.tsx";
+import arrow_2_light from "../../assets/arrows/arrow_light_2.svg";
 
 const Nexus = () => {
   return (
@@ -14,6 +15,7 @@ const Nexus = () => {
         projectTitle={"Nexus"}
         arrow={arrow}
         arrow2={arrow2}
+        arrow_2_light={arrow_2_light}
         arrow_light={arrow_light}
         projectDescription={
           "           This project is a modern Blog Application built with React Vite\n" +

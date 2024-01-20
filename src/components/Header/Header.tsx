@@ -206,7 +206,7 @@ const Header = () => {
             Download Project Resumé
           </motion.button>
         </a>
-        <a href="https://github.com/kieronthomas132">
+        <a href="https://github.com/kieronthomas132" target="_blank">
           <Tooltip content='Github' color='default'>
           <button>
           <IoLogoGithub  className={theme === "dark" ? "text-white text-[50px]" : "text-[#0F95DF] text-[50px]"}/>
@@ -228,7 +228,7 @@ const Header = () => {
               },
             }}
             variants={button2Animation}
-            className={`p-2.5 border-2 ${theme === "dark" ? "border-white text-white" : "border-black text-black"} w-[150px] text-center rounded-full`}
+            className={`p-2.5 border-2 ${theme === "dark" ? "border-white text-white" : "border-[#1698E7] text-[#1698E7]"} w-[150px] text-center rounded-full`}
           >
             Get In Touch
           </motion.button>

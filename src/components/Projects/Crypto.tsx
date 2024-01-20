@@ -3,6 +3,7 @@ import arrow from "../../assets/arrows/curvy_arrow.svg";
 import arrow_light from '../../assets/arrows/arrow_light.svg'
 import arrow2 from "../../assets/arrows/curvy_arrow_4.svg";
 import ProjectsCard from "./ProjectsCard.tsx";
+import arrow_2_light from '../../assets/arrows/arrow_2_light.svg'
 const Crypto = () => {
   return (
     <section>
@@ -12,6 +13,7 @@ const Crypto = () => {
         projectTitle={"CryptoCurrency Converter"}
         arrow={arrow}
         arrow2={arrow2}
+        arrow_2_light={arrow_2_light}
         arrow_light={arrow_light}
         projectImage={crypto}
         arrow2Position={

@@ -15,6 +15,7 @@ const ProjectsCard = ({
   liveLink,
   codeLink,
   arrow_light,
+  arrow_2_light,
 }: {
   projectTitle: string;
   projectDescription: string;
@@ -25,6 +26,7 @@ const ProjectsCard = ({
   liveLink: string;
   codeLink: string;
   arrow_light?: string;
+  arrow_2_light?: string;
 }) => {
   const imageRef = useRef(null);
   const textRef = useRef(null);
@@ -120,7 +122,7 @@ const ProjectsCard = ({
             <p>{projectDescription}</p>
             <span className="flex gap-[20px] mt-2">
               <Tooltip
-                  className={`${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7] "} text-white `}
+                className={`${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7] "} text-white `}
                 content="See Live"
               >
                 <a href={liveLink} target="_blank">
@@ -132,7 +134,7 @@ const ProjectsCard = ({
                 </a>
               </Tooltip>
               <Tooltip
-                  className={`${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7] "} text-white `}
+                className={`${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7] "} text-white `}
                 content="See Code"
               >
                 <a href={codeLink} target="_blank">
@@ -163,12 +165,12 @@ const ProjectsCard = ({
             animate={isArrowInView ? "animate" : "hidden"}
             ref={arrowRef}
             variants={arrowAnimation}
-            src={theme === "dark"  ? arrow : arrow_light}
+            src={theme === "dark" ? arrow : arrow_light}
           />
         </div>
 
         <div className={arrow2Position}>
-          <motion.img src={arrow2} className="w-[100px]" />
+          <motion.img src={theme === "dark" ?  arrow2 : arrow_2_light} className="w-[100px]" />
         </div>
 
         <div className="xl:pr-3 flex xl:block justify-center">
@@ -182,7 +184,7 @@ const ProjectsCard = ({
             animate={isImageInView ? "animate" : "hidden"}
             variants={imageAnimation}
             src={projectImage}
-            className="xl:w-[650px] lg:w-[500px] md:w-[60%] w-[80%] rounded-lg p-[0.5px] bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]"
+            className={`xl:w-[650px] lg:w-[500px] md:w-[60%] w-[80%] rounded-lg p-[0.5px] ${theme === "dark" ? "bg-gradient-to-r from-[#FE8760] via-[#CD5DAE] to-[#BA4ECB]" : "bg-gradient-to-br from-[#0093E9] to-[#80D0C7]"}`}
           />
         </div>
       </div>
