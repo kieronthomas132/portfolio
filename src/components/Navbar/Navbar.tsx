@@ -2,13 +2,13 @@ import logo from "../../assets/Logo.svg";
 import { motion } from "framer-motion";
 //@ts-ignore
 import useSound from "use-sound";
-import DarkModeAnimation from "../DarkModeAnimation.tsx";
+//@ts-ignore
+import DarkModeAnimation from '../DarkModeAnimation.jsx'
 import SmallNav from "./SmallNav.tsx";
 import { navOptions } from "./navLinks.tsx";
 import { useTheme } from "next-themes";
 import button_on from "../../assets/audioAssets/button_on.mp3";
 import button_off from "../../assets/audioAssets/button_off.mp3";
-import { Link } from "react-router-dom";
 const Navbar = () => {
   const { theme } = useTheme();
 
@@ -62,7 +62,7 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <Link to="#connect">
+          <a href="#connect">
             <motion.button
               onMouseDown={buttonOnSound}
               onMouseUp={buttonOffSound}
@@ -72,7 +72,7 @@ const Navbar = () => {
             >
               Lets Talk
             </motion.button>
-          </Link>
+          </a>
         </ul>
         <SmallNav />
       </div>

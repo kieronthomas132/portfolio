@@ -12,7 +12,6 @@ import arrow from "../../assets/arrows/arrow.svg";
 import { IoLogoGithub } from "react-icons/io";
 import { useTheme } from "next-themes";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {Tooltip} from "@nextui-org/react";
 const Header = () => {
   const [playbackRate] = useState(2.5);
@@ -214,7 +213,7 @@ const Header = () => {
           </button>
           </Tooltip>
         </a>
-        <Link to="#connect">
+        <a href="#connect">
           <motion.button
             onMouseDown={buttonOnSound}
             onMouseUp={buttonOffSound}
@@ -233,7 +232,7 @@ const Header = () => {
           >
             Get In Touch
           </motion.button>
-        </Link>
+        </a>
       </motion.div>
     </section>
   );

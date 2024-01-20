@@ -6,7 +6,6 @@ import button_on from "../../assets/audioAssets/button_on.mp3";
 import button_off from "../../assets/audioAssets/button_off.mp3";
 //@ts-ignore
 import useSound from "use-sound";
-import {Link} from "react-router-dom";
 
 const SmallNav = () => {
   const { theme } = useTheme();
@@ -149,13 +148,13 @@ const SmallNav = () => {
                 </a>
               </motion.li>
             ))}
-            <Link to="#connect" onClick={() => setIsClicked(false)}>
+            <a href="#connect" onClick={() => setIsClicked(false)}>
               <motion.button
                 variants={itemVariants}
               >
                 Let's Talk
               </motion.button>
-            </Link>
+            </a>
           </motion.ul>
         </motion.div>
       </motion.div>
