@@ -29,7 +29,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex relative overflow-x-hidden z-30 gap-4 pt-[10px] flex-col items-center justify-center"
+      className="flex relative overflow-y-hidden overflow-x-hidden z-30 gap-4 pt-[10px] flex-col items-center justify-center"
     >
       <motion.div
         whileHover={{

@@ -7,4 +7,8 @@ export const navOptions = [
     name: "Projects",
     link: "#projects",
   },
+  {
+    name: "Tech Stack",
+    link: "#tech-stack",
+  }
 ];

@@ -5,6 +5,8 @@ import Projects from "./components/Projects/Projects.tsx";
 import Contact from "./components/Contact/Contact.tsx";
 import {useTheme} from "next-themes";
 import {useEffect} from "react";
+import Skills from "./components/Skills/Skills.tsx";
+import TechStack from "./components/TechStack/TechStack.tsx";
 
 const App = () => {
     const {theme, setTheme} = useTheme()
@@ -18,6 +20,8 @@ const App = () => {
       <Navbar />
       <Header />
       <Projects />
+        <TechStack/>
+        <Skills/>
       <Contact />
     </div>
   );

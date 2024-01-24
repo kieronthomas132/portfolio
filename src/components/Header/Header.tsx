@@ -143,7 +143,7 @@ const Header = () => {
       </motion.div>
 
       <div className=" text-center w-[80%] lg:w-[40%]">
-        <h2 className="text-[35px] xs:h-[200px] sm:h-[150px] lg:h-[110px] font-[700]">
+        <h2 className="text-[35px] xs:h-[200px] sm:h-[150px] lg:h-[150px] xl:h-auto font-[700]">
           {theme === "dark" ? (
             <Typewriter
               options={{
