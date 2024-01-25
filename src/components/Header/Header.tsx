@@ -144,27 +144,15 @@ const Header = () => {
 
       <div className=" text-center w-[80%] lg:w-[40%]">
         <h2 className="text-[35px] xs:h-[200px] sm:h-[150px] lg:h-[150px] xl:h-auto font-[700]">
-          {theme === "dark" ? (
             <Typewriter
               options={{
-                strings: `I code and love picking up new things ${"<span class='animated-text' >along the way</span>"}`,
+                strings: `I code and love picking up new things ${theme === "dark" ? "<span class='animated-text' >along the way</span>" : "<span class='animated-text-light' >along the way</span>"}`,
                 autoStart: true,
                 loop: false,
                 delay: 35,
-                cursor: `${"<span class='animated-text' >|</span>"}`,
+                cursor: `${theme === "dark" ? "<span class='animated-text' >|</span>" : "<span class='animated-text-light' >|</span>"}`,
               }}
             />
-          ) : (
-            <Typewriter
-              options={{
-                strings: `I code and love picking up new things ${"<span class='animated-text-light' >along the way</span>"}`,
-                autoStart: true,
-                loop: false,
-                delay: 35,
-                cursor: `${"<span class='animated-text-light' >|</span>"}`,
-              }}
-            />
-          )}
         </h2>
       </div>
 
