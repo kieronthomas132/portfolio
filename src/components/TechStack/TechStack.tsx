@@ -105,6 +105,7 @@ const TechStack = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
+        delay: 0.5
       },
     },
   };
