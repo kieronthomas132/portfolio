@@ -4,15 +4,37 @@ import arrow2 from "../../assets/arrows/curvy_arrow_4.svg";
 import arrow_2_light from "../../assets/arrows/arrow_2_light.svg";
 import arrow_light from "../../assets/arrows/arrow_light.svg";
 import ocean from "../../assets/projects/Ocean.png";
-import {useTheme} from "next-themes";
-
+import { useTheme } from "next-themes";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const Upcoming = () => {
-    const {theme} = useTheme()
+  const { theme } = useTheme();
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
+  const headerVariant = {
+    hidden: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+          delay: 0.6
+      },
+    },
+  };
   return (
     <section className="start mx-auto">
-      <h3 className={`text-[25px] ${theme === "dark" ? "text-white" : "text-[#289DE3]"} font-semibold underline-offset-8 underline ml-[60px]`}>
+      <motion.h3
+        initial="initial"
+        animate={isInView ? "animate" : "hidden"}
+        variants={headerVariant}
+        ref={ref}
+        className={`text-[25px] ${theme === "dark" ? "text-white" : "text-[#289DE3]"} font-semibold underline-offset-8 underline ml-[60px]`}
+      >
         Project in Development
-      </h3>
+      </motion.h3>
       <ProjectsCard
         projectTitle={"Ocean Social Media"}
         arrow={arrow}
