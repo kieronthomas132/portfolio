@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Nexus from "../Projects/Nexus.tsx";
 import Crypto from "../Projects/Crypto.tsx";
 import { useTheme } from "next-themes";
-import Upcoming from "./Upcoming.tsx";
+import Quizmania from "./Quizmania.tsx";
 const Projects = () => {
   const { theme } = useTheme();
   const ref = useRef(null);
@@ -48,8 +48,8 @@ const Projects = () => {
           Featured Projects
         </motion.h1>
       </motion.div>
-      <Upcoming/>
       <Nexus />
+      <Quizmania/>
       <Crypto />
     </section>
   );
