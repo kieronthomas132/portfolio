@@ -4,6 +4,7 @@ import Nexus from "../Projects/Nexus.tsx";
 import Crypto from "../Projects/Crypto.tsx";
 import { useTheme } from "next-themes";
 import Quizmania from "./Quizmania.tsx";
+import Jotify from "./Jotify.tsx";
 const Projects = () => {
   const { theme } = useTheme();
   const ref = useRef(null);
@@ -49,7 +50,8 @@ const Projects = () => {
         </motion.h1>
       </motion.div>
       <Nexus />
-      <Quizmania/>
+      <Jotify/>
+      <Quizmania />
       <Crypto />
     </section>
   );
