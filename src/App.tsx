@@ -1,30 +1,37 @@
 import "./index.css";
-import Navbar from "./components/Navbar/Navbar.tsx";
+import {Route, Routes, useLocation} from "react-router";
 import Header from "./components/Header/Header.tsx";
-import Projects from "./components/Projects/Projects.tsx";
-import Contact from "./components/Contact/Contact.tsx";
-import {useTheme} from "next-themes";
-import {useEffect} from "react";
-import Skills from "./components/Skills/Skills.tsx";
-import TechStack from "./components/TechStack/TechStack.tsx";
+import Navbar from "./components/Navbar/Navbar.tsx";
+import Banner from "./components/Banner/Banner.tsx";
+import Project from "./components/Project/Project.tsx";
+import HomePage from "./components/HomePage/HomePage.tsx";
+import SmallNav from "./components/Navbar/SmallNav.tsx";
 
 const App = () => {
-    const {theme, setTheme} = useTheme()
+    const location = useLocation();
 
-    useEffect(() => {
-        setTheme("dark")
-    }, [])
+    //show banner on homepage
+    const showBanner = !location.pathname.includes("project");
 
-  return (
-    <div className={`${theme === "dark" ? "bg-[#161513]" : "bg-[#E7F9FF]"} h-[100%] transition-all ease-in-out duration-300 text-white font-inter`}>
-      <Navbar />
-      <Header />
-      <Projects />
-        <TechStack/>
-        <Skills/>
-      <Contact />
-    </div>
-  );
+    return (
+        <div className="bg-[#DDCFBF] overflow-x-hidden font-montserrat h-full">
+            <Navbar/>
+            <SmallNav/>
+            <Routes>
+                <Route path="/" element={<Header/>}/>
+                <Route path="/project/:name" element={<Project/>}/>
+            </Routes>
+            {/*show banner on condition */}
+            {showBanner && (
+                <div className="h-[250px] relative hidden 2xl:flex">
+                    <Banner/>
+                </div>
+            )}
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+            </Routes>
+        </div>
+    );
 };
 
 export default App;

@@ -1,14 +1,14 @@
-export const navOptions = [
-  {
-    name: "Home",
-    link: "#home",
-  },
-  {
-    name: "Projects",
-    link: "#projects",
-  },
-  {
-    name: "Tech Stack",
-    link: "#tech-stack",
-  }
+export const navbarLinks = [
+    {
+        name: "Home",
+        link: location.pathname.includes('/project') ? '/' : '#home'
+    },
+    {
+        name: "Projects",
+        link: location.pathname.includes('/project') ? '/' : '#projects'
+    },
+    {
+        name: "Contact",
+        link: location.pathname.includes('/project') ? '/' : '#contact'
+    },
 ];

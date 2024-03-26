@@ -1,24 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap&family=Share+Tech+Mono&display=swap&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nosifer&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
+html {
     scroll-behavior: smooth;
-}
-
-body {
-    height: 100%
-}
-.animated-text {
-    background: linear-gradient(to right, #FE8760, #BB4FC9); /* Replace with your gradient colors */
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.animated-text-light {
-    background: linear-gradient(to right, #0093E9, #80D0C7); /* Replace with your gradient colors */
-    -webkit-background-clip: text;
-    color: transparent;
 }
