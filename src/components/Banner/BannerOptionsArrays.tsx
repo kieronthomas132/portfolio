@@ -12,9 +12,6 @@ export const bannerTechOptions = [
     option: "Node JS ",
   },
   {
-    option: "GSAP ",
-  },
-  {
     option: "And More!  ",
   },
 ];
@@ -28,9 +25,6 @@ export const bannerHobbyOptions = [
   },
   {
     option: "Analytical ",
-  },
-  {
-    option: "Self-motivated ",
   },
   {
     option: "Adaptable ",
