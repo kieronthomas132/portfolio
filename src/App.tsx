@@ -23,7 +23,7 @@ const App = () => {
             </Routes>
             {/*show banner on condition */}
             {showBanner && (
-                <div className="h-[200px] relative hidden 2xl:flex">
+                <div className="h-[200px] relative hidden xl:flex">
                     <Banner/>
                 </div>
             )}

@@ -7,8 +7,8 @@ import {
 const Banner = () => {
   return (
     <motion.div
-      initial={{ width: "0%", height: "60px" }}
-      animate={{ width: "100%", height: "60px", transition: { duration: 0.5 } }}
+      initial={{ width: "0%", height: "65px" }}
+      animate={{ width: "100%", transition: { duration: 0.5 } }}
       className="relative bg-[#B6A494] text-white top-[100px] rotate-2 overflow-hidden z-10"
       style={{ left: 0, right: 0 }}
     >
