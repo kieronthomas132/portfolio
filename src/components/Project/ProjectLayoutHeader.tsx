@@ -66,7 +66,7 @@ const ProjectLayoutHeader = ({
         <motion.img
           initial={{ x: 140, opacity: 0 }}
           animate={{ x: 0, opacity: 1, transition: { delay: 0.8 } }}
-          className="md:w-[300px] w-[20%]"
+          className="lg:w-[300px] w-[20%]"
           src={image}
           alt={name}
         />
