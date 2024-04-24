@@ -1,6 +1,6 @@
 import jotify from "../../assets/notes.png";
 import nexus from "../../assets/nexus_logo.svg";
-import quizmania from "../../assets/quizmania.png";
+import quizmania from "../../assets/quizmania_logo.png";
 
 export const projectCards = [
   {

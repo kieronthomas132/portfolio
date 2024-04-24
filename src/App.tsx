@@ -1,37 +1,41 @@
 import "./index.css";
-import {Route, Routes, useLocation} from "react-router";
-import Header from "./components/Header/Header.tsx";
-import Navbar from "./components/Navbar/Navbar.tsx";
-import Banner from "./components/Banner/Banner.tsx";
-import Project from "./components/Project/Project.tsx";
-import HomePage from "./components/HomePage/HomePage.tsx";
-import SmallNav from "./components/Navbar/SmallNav.tsx";
+import Home from "./components/Home/Home.tsx";
+import ProjectsPage from "./components/ProjectsPage/ProjectsPage.tsx";
+import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import useStore from "./components/zustandStore/SmallScreenStore.tsx";
+import Nav from "./components/Nav/Nav.tsx";
 
 const App = () => {
-    const location = useLocation();
+  const { smallScreen, setSmallScreen } = useStore();
 
-    //show banner on homepage
-    const showBanner = !location.pathname.includes("project");
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1000) {
+        setSmallScreen(true);
+      } else {
+        setSmallScreen(false);
+      }
+    };
 
-    return (
-        <div className="bg-[#DDCFBF] overflow-x-hidden font-montserrat h-full">
-            <Navbar/>
-            <SmallNav/>
-            <Routes>
-                <Route path="/" element={<Header/>}/>
-                <Route path="/project/:name" element={<Project/>}/>
-            </Routes>
-            {/*show banner on condition */}
-            {showBanner && (
-                <div className="h-[200px] relative hidden xl:flex">
-                    <Banner/>
-                </div>
-            )}
-            <Routes>
-                <Route path="/" element={<HomePage/>}/>
-            </Routes>
-        </div>
-    );
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <>
+      {smallScreen && <Nav />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
+    </>
+  );
 };
 
 export default App;
