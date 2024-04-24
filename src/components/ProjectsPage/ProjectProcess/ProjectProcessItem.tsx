@@ -1,5 +1,4 @@
 import { Tooltip } from "@nextui-org/react";
-import useStore from "../../zustandStore/SmallScreenStore.tsx";
 import { ReactNode, useState } from "react";
 
 const ProjectProcessItem = ({
@@ -15,11 +14,10 @@ const ProjectProcessItem = ({
 }) => {
   const [hovered, setHovered] = useState<number | null>(0);
 
-  const { smallScreen } = useStore();
 
   return (
     <Tooltip
-      placement={smallScreen ? "bottom" : "left"}
+      placement="bottom"
       classNames={{ content: "bg-[#191919]" }}
       content={
         <div className="w-[350px] p-2 text-[15px] text-[#CCCCCC]">
