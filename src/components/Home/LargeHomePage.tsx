@@ -25,7 +25,7 @@ const LargeHomePage = () => {
         </div>
       </div>
 
-      <div className="2xl:flex 2xl:flex-col items-center 2xl:items-start flexflex-col w-full 2xl:justify-start ">
+      <div className="2xl:flex 2xl:flex-col items-center 2xl:items-start flex flex-col w-full 2xl:justify-start ">
         <div className="flex w-full mt-[10px] 2xl:mt-0 2xl:ml-[10px] 2xl:justify-start justify-center 2xl:w-full">
           <TruthLies />
           <Pathway />
