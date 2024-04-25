@@ -35,7 +35,7 @@ const Pathway = () => {
     {
       title: "Progress Towards Senior Developer",
       content:
-        "Advance into a senior developer position, mentor juniors and collaborator on exciting projects.",
+        "Advance into a senior developer position, mentor juniors and collaborate on exciting projects.",
       icon: <GiGraduateCap />,
     },
   ];
