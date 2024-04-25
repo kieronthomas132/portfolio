@@ -50,7 +50,7 @@ const ProjectItem = ({
       onMouseLeave={() => setCardHovered(null)}
       className="bg-[#191919] mt-3"
     >
-      <a href={link}>
+      <a href={link} target='_blank'>
         <CardBody className="flex items-center text-white">
           <img
             src={img}
