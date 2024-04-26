@@ -12,7 +12,7 @@ const ProjectProcessItem = ({
   index: number;
   icon: ReactNode;
 }) => {
-  const [hovered, setHovered] = useState<number | null>(0);
+  const [hovered, setHovered] = useState<number | null>(null);
 
 
   return (
