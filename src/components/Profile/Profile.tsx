@@ -26,7 +26,7 @@ const Profile = () => {
               <p className="text-[#CCCCCC] font-[600] text-[13px]">Resumé</p>
               <motion.a
                 whileTap={{ y: "0px" }}
-                whileHover={{ y: "-10px" }}
+                whileHover={{ y: "-5px" }}
                 download
                 href={Resume}
               >
