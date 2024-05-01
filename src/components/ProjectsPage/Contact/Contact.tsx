@@ -8,12 +8,12 @@ const Contact = () => {
   const contact = [
     {
       contact: "Email",
-      link: import.meta.env.VITE_WHATSAPP_NUMBER,
+      link: import.meta.env.VITE_EMAIL,
       icon: <MdEmail />,
     },
     {
       contact: "WhatsApp",
-      link: import.meta.env.VITE_EMAIL,
+      link: import.meta.env.VITE_WHATSAPP_NUMBER,
       icon: <IoLogoWhatsapp />,
     },
   ];
