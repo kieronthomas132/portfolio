@@ -11,7 +11,7 @@ const Profile = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.7 } }}
-      className="p-2 rounded-[20px] xs:w-[95%] sm:w-[530px] pb-5 border-2 border-[#191919] mt-[10px] bg-[#101010]"
+      className="p-2 rounded-[20px] xs:w-[95%] sm:w-[530px] pb-5 border-2 border-border mt-[10px] bg-card_background"
     >
       <div className="flex items-center p-4 w-full">
         <img
@@ -23,14 +23,14 @@ const Profile = () => {
           <div className="flex items-center gap-7">
             <ProfileAvailableToWork />
             <div className=" items-center hidden md:flex gap-2">
-              <p className="text-[#CCCCCC] font-[600] text-[13px]">Resumé</p>
+              <p className="text-list_header font-[600] text-[13px]">Resumé</p>
               <motion.a
                 whileTap={{ y: "0px" }}
                 whileHover={{ y: "-5px" }}
                 download
                 href={Resume}
               >
-                <IoDownload className="bg-[#1F1F1F] p-2.5 text-[45px] rounded-lg text-[#999999]" />
+                <IoDownload className="bg-icon_bg p-2.5 text-[45px] rounded-lg text-inactive_icon" />
               </motion.a>
             </div>
           </div>

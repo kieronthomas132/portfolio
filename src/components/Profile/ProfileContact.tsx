@@ -24,9 +24,9 @@ const ProfileContact = () => {
           <a
             href={link}
             target={contact === "WhatsApp Me" ? "_blank" : ""}
-            className="p-4 hover:bg-[#1F1F1F] transition-background bg-[#141414] text-center justify-center font-[500] flex items-center gap-1 text-[#999999] border-2 border-[#191919] rounded-lg"
+            className="p-4 hover:bg-active_button_bg transition-background bg-contact_bg text-center justify-center font-[500] flex items-center gap-1 text-gray_text border-2 border-border rounded-lg"
           >
-            <p className="text-[#A18FFC] text-[20px]">{icon}</p>
+            <p className="text-icon text-[20px]">{icon}</p>
             <p className="text-[15px]">{contact}</p>
           </a>
         ))}
@@ -35,10 +35,10 @@ const ProfileContact = () => {
         download
         href={Resume}
         target='_blank'
-        className="w-[95%] text-center md:hidden flex items-center justify-center gap-3 mx-auto mt-2 p-2 hover:bg-[#1F1F1F] transition-background bg-[#141414] rounded-lg text-[#999999] border-2 border-[#191919] "
+        className="w-[95%] text-center md:hidden flex items-center justify-center gap-3 mx-auto mt-2 p-2 hover:bg-resume_hover_bg transition-background bg-contact_bg rounded-lg text-gray_text border-2 border-border"
       >
         Resume
-        <IoDownload className="bg-[#1F1F1F] p-2.5 text-[40px] rounded-lg text-[#999999]" />
+        <IoDownload className="bg-resume_bg p-2.5 text-[40px] rounded-lg text-gray_text" />
       </a>
     </>
   );

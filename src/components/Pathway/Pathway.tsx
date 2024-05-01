@@ -44,7 +44,7 @@ const Pathway = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.9 } }}
-      className="bg-[#101010] h-[450px] md:h-auto p-2 xs:w-[95%] sm:w-[530px] md:w-[540px] lg:w-[340px] 2xl:w-[265px] rounded-3xl border-2 border-[#191919]"
+      className="bg-card_background h-[450px] md:h-auto p-2 xs:w-[95%] sm:w-[530px] md:w-[540px] lg:w-[340px] 2xl:w-[265px] rounded-3xl border-2 border-[#191919]"
     >
       <CardHeader
         headerTitle={"My Pathway"}

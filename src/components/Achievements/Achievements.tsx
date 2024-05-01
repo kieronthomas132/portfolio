@@ -19,7 +19,7 @@ const Achievements = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.9 } }}
-      className="lg:mt-[10px] lg:mr-5 bg-[#101010] xs:w-[95%] sm:w-[540px] lg:w-[580px] md:h-[350px] mb-5 2xl:w-full flex flex-col p-2 rounded-3xl xl:h-[350px] border-2 border-[#191919]"
+      className="lg:mt-[10px] lg:mr-5 bg-card_background xs:w-[95%] sm:w-[540px] lg:w-[580px] md:h-[350px] mb-5 2xl:w-full flex flex-col p-2 rounded-3xl xl:h-[350px] border-2 border-border"
     >
       <CardHeader
         headerTitle={"Achievements"}
@@ -30,7 +30,7 @@ const Achievements = () => {
         {achievements.map(({ achievement }, index) => (
           <li
             key={index}
-            className="p-3 mt-3 bg-[#191919] my-6 text-[14px] text-[#919191] rounded-lg border-2 border-[#212121]"
+            className="p-3 mt-3 bg-list_bg my-6 text-[14px] text-gray_text rounded-lg border-2 border-list_border"
           >
             {achievement}
           </li>

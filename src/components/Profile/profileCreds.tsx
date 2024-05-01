@@ -29,12 +29,12 @@ const ProfileCreds = () => {
 
     return (
         <div
-            className="bg-[#141414] relative w-[95%] flex flex-wrap gap-4 mx-auto p-3 border-2 rounded-xl border-[#191919]">
+            className="bg-[#141414] relative w-[95%] flex flex-wrap gap-4 mx-auto p-3 border-2 rounded-xl border-border">
             {profileCreds.map(({cred, icon}) => (
                 <div
-                    className="flex items-center p-2 text-center border-2 border-[#212121] rounded-full bg-[#191919] gap-2">
-                    <span className="text-[#A291FD]">{icon}</span>
-                    <p className="text-[#999999] text-[13px] font-[500]">
+                    className="flex items-center p-2 text-center border-2 border-creds_border rounded-full bg-creds_bg gap-2">
+                    <span className="text-icon">{icon}</span>
+                    <p className="text-gray_text text-[13px] font-[500]">
                         {cred}
                     </p>
                 </div>

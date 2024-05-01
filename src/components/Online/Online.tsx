@@ -27,7 +27,7 @@ const Online = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 0.85 } }}
-      className="bg-[#101010] mt-[10px] p-2 w-[480px] mr-3 h-[350px] 2xl:w-[260px] 2xl:mt-[10px] rounded-3xl border-2 border-[#191919]"
+      className="bg-card_background mt-[10px] p-2 w-[480px] mr-3 h-[350px] 2xl:w-[260px] 2xl:mt-[10px] rounded-3xl border-2 border-border"
     >
       <CardHeader
         headerTitle={"Where Am I Online?"}
